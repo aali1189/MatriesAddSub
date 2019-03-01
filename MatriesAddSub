@@ -1,0 +1,103 @@
+
+import java.util.Scanner;
+
+public class LabActitvtyMatries {
+
+   static Scanner sc =new Scanner(System.in);
+     static  int size[] = new int[2];
+   
+    public static void main(String[] args) {
+      
+      
+        // initial sizes 
+     for(int i=0; i<2; i++){
+     System.out.print("Enter the elements' size " + (i+1) + " : ");
+     size[i] = sc.nextInt();
+     }
+    // Arrays 
+     int matrixOne[][]  = new int[size[0]][size[0]];
+     int matrixTwo[][] = new int[size[1]][size[1]];
+    
+    // Enter the value to each elements
+
+input(matrixOne);
+display(matrixOne);
+input(matrixTwo);
+display(matrixTwo);   
+  
+
+  // options ADD / SUB
+System.out.print("[1]ADD | [2]SUB : ");
+int op = sc.nextInt();
+switch(op){
+
+    
+    case 1:
+          add(matrixOne, matrixTwo) ;
+        break;
+        
+    case 2 :
+          sub(matrixOne, matrixTwo) ;
+        break;
+        
+        default:
+            
+            break;
+
+}
+
+        
+    }
+    
+
+    
+    static void input(int arr[][]){
+         System.out.print("\nInput \n");
+         for(int i =0; i<arr.length; i++){
+            for(int j =0; j<arr.length; j++){
+                System.out.print("Enter the value : ");
+                arr[i][j] = sc.nextInt();  
+            }
+        }
+     
+ }
+    
+    
+    
+    static void display(int arr[][]){
+    int s = arr.length;
+        for(int i =0; i<s; i++){
+            for(int j =0; j<s; j++){
+             System.out.print(arr[i][j] + " ");
+            }
+        System.out.print("\n");
+        }
+        
+    }
+    
+    
+    static void add(int arr[][], int arr2[][]){
+    System.out.print("\nThe sum is \n");
+        for(int i =0; i<arr.length; i++){
+            for(int j =0; j<arr.length; j++){
+             System.out.print((arr[i][j] + arr2[i][j])+ " ") ;
+            }
+        System.out.print("\n");
+        }
+        
+    }
+    
+    
+    
+    static void sub(int arr[][], int arr2[][]){
+    System.out.print("\nThe sub is \n");
+        for(int i =0; i<arr.length; i++){
+            for(int j =0; j<arr.length; j++){
+             System.out.print((arr[i][j] - arr2[i][j])+ " ") ;
+            }
+        System.out.print("\n");
+        }
+        
+    }
+    
+}
